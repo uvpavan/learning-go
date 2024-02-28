@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"strconv"
 )
 
@@ -15,6 +16,7 @@ func stringToNum() {
 	str := "hi"
 	num, err := strconv.ParseInt(str, 10, 64)
 	if err != nil {
+		log.Fatalln("cannot parse string:", err)
 		panic(err)
 	}
 	fmt.Println(num)
